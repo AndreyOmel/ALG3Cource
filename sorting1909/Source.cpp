@@ -18,10 +18,10 @@ void bubble(std::vector<int>& arr, size_t size) {
     }  
 }
 void insertSort(std::vector<int>& arr, size_t size) {
-    int x;
-    int i, j;
+    int x=arr[0];
+    size_t j;
 
-    for (i = 0; i < size; i++) {  
+    for (size_t i = 0; i < size; i++) {
         x = arr[i];
 
         for (j = i - 1; j >= 0 && arr[j] > x; j--)
@@ -33,9 +33,9 @@ void insertSort(std::vector<int>& arr, size_t size) {
 
 int halfing(std::vector<int>& arr, int low, int high) {
     int opor = arr[high];
-    int i = low - 1;  
+    size_t i = low - 1;
 
-    for (int j = low; j < high; j++) {
+    for (size_t j = low; j < high; j++) {
         if (arr[j] < opor) {
             i++;
             std::swap(arr[i], arr[j]);
@@ -65,7 +65,7 @@ int main()
     //bubble(arr, size);
     insertSort(arr, size);
 
-    for (int i = 0; i < size-1; i++)
+    for (size_t i = 0; i < size-1; i++)
         std::cout << arr[i] << " ";
     std::cout << std::endl;
     
